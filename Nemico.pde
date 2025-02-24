@@ -6,11 +6,11 @@ public abstract class Nemico{
     ArrayList<PVector> percorso;
     int indicePuntoDaRaggiungere;
 
-    public Nemico (float velocita,int vita,ArrayList<PVector> percorso;) {
+    public Nemico (float velocita,int vita,ArrayList<PVector> percorso) {
         this.velocita=velocita;
         this.vita=vita;
         this.percorso=new ArrayList<PVector>(percorso);
-        this.posizioneIniziale=percorso.get(0).copy();
+        this.posizione=percorso.get(0).copy();
         this.indicePuntoDaRaggiungere=1;
     }
     public abstract void display();
@@ -36,7 +36,10 @@ public abstract class Nemico{
             }
         }
     }
-    public abstract void aggiornamento();
+    public void aggiornamento(){
+       display();
+       muovi();
+    }
     public boolean eArrivato(){
         if(indicePuntoDaRaggiungere>=percorso.size()){
             return true;
@@ -46,4 +49,3 @@ public abstract class Nemico{
     }
 
 }
-
