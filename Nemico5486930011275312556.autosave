@@ -1,0 +1,11 @@
+public abstract class Nemico {
+    int velocita;
+    public Nemico ( int velocita) {
+        
+    }
+    public abstract void display();
+    public void muovi(){
+
+    }
+
+}
