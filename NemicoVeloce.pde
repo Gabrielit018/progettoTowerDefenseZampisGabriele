@@ -1,9 +1,9 @@
-public class nemicoVeloce extends Nemico{
-
-    int dimensione;
-    public NemicoVeloce(int velocita, int vita,int dimensione, ArrayList<PVector> percorso) {
+public class NemicoVeloce extends Nemico{
+    public static final int velocita=4;
+    private static final int dimensione=30;
+    
+    public NemicoVeloce(int vita, ArrayList<PVector> percorso) {
         super(velocita,vita,percorso);
-        this.dimensione=dimensione;
     } 
     public void display(){
         circle(posizione.x,posizione.y,dimensione);
