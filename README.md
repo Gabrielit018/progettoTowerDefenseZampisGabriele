@@ -26,5 +26,15 @@ col passare del tempo inoltre vengono generati sempre più nemici, per raggiunge
 • Il sistema non deve essere troppo pesante in termini di memoria, e utilizzo delle risorse in generale della macchina.
 • Il sistema deve avere un tempo di risposta veloce.
 • il sistema dev'essere facilmente mantenibile e aggiornabile
-
-
+## scelte progettuali 
+per lo sviluppo corretto di un sistema attuo a giocare a questo tower defense sono state applicati i seguenti criteri:
+• utilizzo delle classi e del polimorfismo per evitare ridondanza nel codice, permette di risparmiare tempo, e non sovraccaricare con codice non necessario la macchina
+• divisione in classi e metodi efficiente, praticamente ogni metodo si occupa di una determinata cosa da fare, e nelle classi viene utilizzato un metodo sommatorio con visibilità public che serve per aggiornare insieme tutte le funzioni, cosi da risultare una sola funziona da aggiornare visibile alle classi in cui quella determinata classe è utilizzata
+e utilizzate le seguenti classi: 
+• classe per le coordinate
+• classe per la cella: contenente il colore, e le coordinate 
+• classe per la griglia: attua al disegnamento della griglia durante il gioco 
+• classe nemico e tutte le sottoclassi: oggetto nemico, utilizza il polimorfismo, la superclasse è astratta 
+• classe nemici: compone tutto l'insieme di nemici e si occupa di generarne e rimuoverne 
+• classe delle torri e tutte le sottoclassi: oggetto per difendere la torre, vengono istanziate spendendo monete, possono essere istanziate in una cella non occupata e non facente parte del percorso
+• classe del gameManager: come verte nel nome, la classe gameManager si occupa di gestire tutte le impostazioni del gioco.
