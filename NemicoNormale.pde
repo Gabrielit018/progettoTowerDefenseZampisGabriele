@@ -8,8 +8,10 @@ public class NemicoNormale extends Nemico{
     public void display(){
         rectMode(CENTER);
         fill(0, 0, 255);
-        rect(posizione.x,posizione.y,dimensione,dimensione);
+        circle(posizione.x,posizione.y,dimensione);
         fill(255);
+        rect(posizione.x,posizione.y,dimensione/2,dimensione/2);
+        fill(0);
         textSize(12);
         textAlign(CENTER, CENTER);
         text(this.vita, posizione.x, posizione.y);

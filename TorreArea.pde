@@ -16,6 +16,7 @@ public class TorreArea extends Tower{
         }
     }
     public void display(){
+        fill(21,67,187);
         circle(this.posizione.x, this.posizione.y, dimensione);
     }
 
