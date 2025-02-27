@@ -11,7 +11,7 @@ public abstract class Tower{
     public abstract void spara(ArrayList<Nemico> nemici);
     private void setRicarica(){
         if(this instanceof TorreArea){
-            tempoRicarica=60;
+            tempoRicarica=90;
         }else if(this instanceof TorreRapida){
             tempoRicarica=30;
         }
@@ -25,8 +25,19 @@ public abstract class Tower{
             return false;
         }
     }
-    protected void colpisci(float x1, float y1, float x2, float y2,Nemico nemicoTemp,int danno){
-        line(x1,y1,x2,y2);
-        nemicoTemp.diminuisciVita(danno);
+    private void colpisci(float x1, float y1, float x2, float y2,Nemico nemicoTemp,int danno){
+      line(x1,y1,x2,y2);
+      nemicoTemp.diminuisciVita(danno);
+        
+    }
+    protected void attacco(ArrayList <Nemico> nemici,raggio){
+        if(timer()){
+            for(Nemico nemicoTemp : nemici){ 
+                float distanza=PVector.dist(this.posizione,nemicoTemp.posizione);
+                if(distanza<=raggio){
+                    colpisci(this.posizione.x, this.posizione.y, nemicoTemp.posizione.x, nemicoTemp.posizione.y,nemicoTemp,danno);
+                }
+            }
+        }
     }
 }

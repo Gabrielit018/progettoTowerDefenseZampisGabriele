@@ -9,6 +9,8 @@ public class NemicoVeloce extends Nemico{
         fill(0, 0, 255);
         circle(posizione.x,posizione.y,dimensione);
         fill(255);
+        circle(posizione.x,posizione.y,dimensione/2);
+        fill(0);
         textSize(12);
         textAlign(CENTER, CENTER);
         text(this.vita, posizione.x, posizione.y);
