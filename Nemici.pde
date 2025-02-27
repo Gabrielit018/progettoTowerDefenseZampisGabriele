@@ -20,7 +20,7 @@ public class Nemici{
         }else{
             return false;
         }
-        
+
     }
     private void display(Torri t) {
       if(votaCorrente.getVita()>0){
