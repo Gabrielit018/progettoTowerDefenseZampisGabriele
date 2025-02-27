@@ -27,7 +27,11 @@ public class Nemici{
                 nemici.remove(i);
                 t.aumentaMonete();
             } else {
-                n.aggiornamento();
+                if(!n.eArrivato){
+                    n.aggiornamento();
+                }else{
+                    nemici.remove(i);
+                }
             }
         }
     }
