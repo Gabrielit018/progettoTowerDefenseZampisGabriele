@@ -23,13 +23,14 @@ public class Nemici{
         
     }
     private void display(Torri t) {
+      if(votaCorrente.getVita()>0){
         for (int i = 0; i < nemici.size(); i++) {
             Nemico n = nemici.get(i);
             if (n.eMorto()) {
                 nemici.remove(i);
                 t.aumentaMonete();
             } else {
-                if(!n.eArrivato){
+                if(!n.eArrivato()){
                     n.aggiornamento();
                 }else{
                     nemici.remove(i);
@@ -37,6 +38,8 @@ public class Nemici{
                 }
             }
         }
+      }
+        
     }
     private void spawnaNemici(){
         if(timer()){

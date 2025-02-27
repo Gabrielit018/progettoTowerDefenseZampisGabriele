@@ -9,7 +9,7 @@ public void setup(){
 }
 public void draw(){
   //background(152,190,100);
-   
+   gioco.gioco();
   //t.display();
   //t.spara(nemici);
   
