@@ -1,9 +1,9 @@
-public abstract class Tower{
+public abstract class Torre{
     protected PVector posizione;
     int costo;
     int tempoRicarica;
     int tempoCorrente;
-    public Tower (int x, int y) {
+    public Torre (int x, int y) {
         this.posizione=new PVector(x,y);
         setRicarica();
     }
@@ -13,7 +13,7 @@ public abstract class Tower{
         if(this instanceof TorreArea){
             tempoRicarica=90;
         }else if(this instanceof TorreRapida){
-            tempoRicarica=30;
+            tempoRicarica=20;
         }
     }
     public boolean timer(){
@@ -30,7 +30,7 @@ public abstract class Tower{
       nemicoTemp.diminuisciVita(danno);
         
     }
-    protected void attacco(ArrayList <Nemico> nemici,raggio){
+    protected void attacco(ArrayList <Nemico> nemici,int raggio,int danno){
         if(timer()){
             for(Nemico nemicoTemp : nemici){ 
                 float distanza=PVector.dist(this.posizione,nemicoTemp.posizione);

@@ -2,7 +2,7 @@ Nemico n;
 Nemico n1;
 Nemico n3;
 Griglia g;
-Tower t;
+Torre t;
 ArrayList<Nemico> nemici;
 ArrayList<PVector> percorso;
 int dimensione=800;

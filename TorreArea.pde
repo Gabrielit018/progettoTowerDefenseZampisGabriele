@@ -1,4 +1,4 @@
-public class TorreArea extends Tower{
+public class TorreArea extends Torre{
     private static final int danno = 2;
     private static final int dimensione=40;
     private static final int raggio=300;
