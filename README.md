@@ -10,3 +10,15 @@ il giocatore durante il gioco è tenuto a piazzare delle torri nella cella trami
 difficolta
 col passare del tempo il gioco diventerà sempre più complesso, e ad una certa sarà impossibile vincere, è presente un moltiplicatore della vita che ogni 10 secondi aumenta di n numero la vita, rendendo ad una certa il gioco impossibilie da vincere
 col passare del tempo inoltre vengono generati sempre più nemici, per raggiungere questo spawn massimo bisogna sopravvivere 40 secondi 
+## requisiti funzionali 
+I nemici che compaiono in ogni ondata sono scelti in modo casuale.
+Il giocatore ha dieci vite. Se più di nove nemici raggiungono la fine del percorso, il gioco termina e compare la scritta "Game Over" in rosso.
+Il giocatore può piazzare un numero illimitato di torri, ma deve acquistarle usando le monete.
+All'inizio del gioco, il giocatore riceve 70 monete.
+Le monete si guadagnano uccidendo i nemici.
+il giocatore deve poter posizionare le torri solamente nelle celle non assegnate e non facenti parte del percorso 
+il giocatore deve avere la possibilità di schierare due tipi di torri, una ad area e una rapida
+il giocatore deve trovarsi nella situazione di affrontare una situazione random di nemici estratti casualmente e progressivamente potenziati nel lungo andare della partita
+## requisiti non funzionali
+
+
