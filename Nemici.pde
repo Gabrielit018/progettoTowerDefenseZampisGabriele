@@ -23,7 +23,7 @@ public class Nemici{
 
     }
     private void display(Torri t) {
-      if(votaCorrente.getVita()>0){
+      if(vitaCorrente.getVita()>0){
         for (int i = 0; i < nemici.size(); i++) {
             Nemico n = nemici.get(i);
             if (n.eMorto()) {
