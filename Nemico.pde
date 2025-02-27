@@ -1,10 +1,10 @@
 public abstract class Nemico{
-    int vita;
-    float velocita;
+    protected int vita;
+    protected float velocita;
     //utilizzo di pvector per descrivere la posizione ed il mvoimento del nemico 
-    PVector posizione;
-    ArrayList<PVector> percorso;
-    int indicePuntoDaRaggiungere;
+    protected PVector posizione;
+    protected ArrayList<PVector> percorso;
+    protected int indicePuntoDaRaggiungere;
 
     public Nemico (float velocita,int vita,ArrayList<PVector> percorso) {
         this.velocita=velocita;
@@ -21,8 +21,8 @@ public abstract class Nemico{
             return false;
         }
     }
-    public void diminuisciVita(){
-        vita--;
+    public void diminuisciVita(int danno){
+        vita-=danno;
     }
     public void muovi(){
         if(indicePuntoDaRaggiungere<percorso.size()){
@@ -37,8 +37,9 @@ public abstract class Nemico{
         }
     }
     public void aggiornamento(){
-       display();
-       muovi();
+        muovi();
+        display();
+       
     }
     public boolean eArrivato(){
         if(indicePuntoDaRaggiungere>=percorso.size()){
@@ -47,5 +48,6 @@ public abstract class Nemico{
             return false;
         }
     }
+    
 
 }

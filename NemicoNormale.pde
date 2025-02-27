@@ -6,7 +6,7 @@ public class NemicoNormale extends Nemico{
        
     } 
     public void display(){
-        rect(posizione.x,posizione.y,dimensione,dimensione);
+        rect(posizione.x-dimensione/2,posizione.y-dimensione/2,dimensione,dimensione);
         text(this.vita,posizione.x,posizione.y);
     }
 }

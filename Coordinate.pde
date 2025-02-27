@@ -1,9 +1,9 @@
 public class Coordinate{
-    private int x1;
-    private int x2; 
-    private int y1; 
-    private int y2;
-    private int grandezzaCella;
+    protected  int x1;
+    protected int x2; 
+    protected int y1; 
+    protected int y2;
+    protected int grandezzaCella;
     public Coordinate (int x, int y, int grandezzaCella) {
         this.x1=x;
         this.y1=y;

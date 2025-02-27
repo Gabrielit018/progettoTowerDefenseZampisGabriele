@@ -1,0 +1,9 @@
+public abstract class Tower{
+    protected PVector posizione;
+    int costo;
+    public Tower (int x, int y) {
+        this.posizione=new PVector(x,y);
+    }
+    public abstract void display();
+èì    
+}

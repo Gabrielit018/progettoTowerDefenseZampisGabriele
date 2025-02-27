@@ -8,21 +8,18 @@ public class Griglia{
         grandezzaCella=dimensione/lato;
         inizializzaGriglia();
     }
-    private void inizializzaGriglia(){
-        int x=0;
-        int y=0;
-        for(int i=0; i<lato; i++){
-            for(int j=0; j<lato; j++){
-                griglia[i][j]=new Cella(x,y,grandezzaCella);
-                x+=grandezzaCella;
-            }
-            x=0;
-            y+=grandezzaCella;
-        }
-    }
-    public void displayGriglia(){
-        for(int i=0; i<lato; i++){
-            for(int j=0; j<lato; j++){
+    private void inizializzaGriglia() {
+      for (int i = 0; i < lato; i++) {
+          for (int j = 0; j < lato; j++) {
+              int x = j * grandezzaCella;
+              int y = i * grandezzaCella;
+              griglia[i][j] = new Cella(x, y, grandezzaCella);
+          }
+      }
+  }
+    public void displayGriglia() {
+        for (int i = 0; i < lato; i++) {
+            for (int j = 0; j < lato; j++) {
                 griglia[i][j].display();
             }
         }
