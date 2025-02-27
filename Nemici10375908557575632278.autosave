@@ -14,14 +14,13 @@ public class Nemici{
         this.intervalloSpawn = 60; 
         this.vitaCorrente=vitaCorrente;
         this.moltiplicatoreVita=1;
-        this.tempoMoltiplicazioneVitaCorrente=0;
-        this.tempoMoltiplicazioneVita=600;
+        
     }
     private boolean timer(){
         tempoSpawnCorrente++;
         if(tempoSpawnCorrente>intervalloSpawn){
             tempoSpawnCorrente=0;
-            if(intervalloSpawn>20){
+            if(intervalloSpawn>5){
                 intervalloSpawn--;
             }
             return true;
@@ -30,15 +29,7 @@ public class Nemici{
         }
 
     }
-    private void moltiplicazioneVita(){
-        tempoMoltiplicazioneVitaCorrente++;
-        if(tempoMoltiplicazioneVitaCorrente>=tempoMoltiplicazioneVita){
-            tempoMoltiplicazioneVitaCorrente=0;
-            moltiplicatoreVita++;
-        }
-    }
     private void display(Torri t) {
-        
       if(vitaCorrente.getVita()>0){
         for (int i = 0; i < nemici.size(); i++) {
             Nemico n = nemici.get(i);
@@ -63,22 +54,21 @@ public class Nemici{
         }
     }
     private void spawnNemicoCasuale() {
-       
         int tipo = (int) random(3); 
         Nemico nuovoNemico;
 
         switch (tipo) {
             case 0:
-                nuovoNemico = new NemicoNormale(8*moltiplicatoreVita,percorso);
+                nuovoNemico = new NemicoNormale(8,percorso);
                 break;
             case 1:
-                nuovoNemico = new NemicoTank(10*moltiplicatoreVita,percorso);
+                nuovoNemico = new NemicoTank(10,percorso);
                 break;
             case 2:
-                nuovoNemico = new NemicoVeloce(6*moltiplicatoreVita,percorso);
+                nuovoNemico = new NemicoVeloce(6,percorso);
                 break;
             default:
-                nuovoNemico = new NemicoNormale(8*moltiplicatoreVita,percorso);
+                nuovoNemico = new NemicoNormale(8,percorso);
                 break;
         }
         
@@ -86,7 +76,6 @@ public class Nemici{
         nemici.add(nuovoNemico);
     }
     public void gestioneNemici(Torri torri){
-       moltiplicazioneVita();
         display(torri);
         spawnaNemici();
     }
