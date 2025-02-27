@@ -15,8 +15,10 @@ public class Nemici{
         tempoSpawnCorrente++;
         if(tempoSpawnCorrente>intervalloSpawn){
             tempoSpawnCorrente=0;
+            if(intervalloSpawn>10){
+                intervalloSpawn--;
+            }
             return true;
-            
         }else{
             return false;
         }

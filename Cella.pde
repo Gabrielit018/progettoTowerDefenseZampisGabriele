@@ -15,9 +15,9 @@ public class Cella {
 
     private void coloreCella() {
         if (faParteDelPercorso) {
-            c1.r = 0;
-            c1.g = 127;
-            c1.b = 255;
+            c1.r = 92;
+            c1.g = 136;
+            c1.b = 218;
         } else if (!faParteDelPercorso && !torreAssegnata) {
             c1.r = 66;
             c1.g = 49;

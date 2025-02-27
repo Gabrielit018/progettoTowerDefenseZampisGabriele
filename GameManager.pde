@@ -7,10 +7,11 @@ public class GameManager{
     public GameManager () {
         griglia = new Griglia(800);
         percorso = new ArrayList<PVector>();
-        percorso.add(new PVector(50, 50));
-        percorso.add(new PVector(400, 50));
-        percorso.add(new PVector(400, 300));
-        percorso.add(new PVector(800, 300));
+        percorso.add(new PVector(0, 40));
+        percorso.add(new PVector(440, 40));
+        percorso.add(new PVector(440, 440));
+        percorso.add(new PVector(800, 440));
+        
         this.vitaCorrente=new GestioneVita();
         nemici=new Nemici(percorso,vitaCorrente);
         torri=new Torri(griglia,nemici);

@@ -14,6 +14,15 @@ public class Griglia{
               int x = j * grandezzaCella;
               int y = i * grandezzaCella;
               griglia[i][j] = new Cella(x, y, grandezzaCella);
+              if(i==0 && j>=0 && j<=lato/2){
+                griglia[i][j].setFaParteDelPercorso(true);
+              }
+              if(i>0 && i<=lato/2 && j==lato/2){
+                griglia[i][j].setFaParteDelPercorso(true);
+              }
+              if(i==lato/2 && j>=lato/2 && j<=lato){
+                griglia[i][j].setFaParteDelPercorso(true);
+              }
           }
       }
   }
