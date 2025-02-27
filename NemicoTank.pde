@@ -6,7 +6,7 @@ public class NemicoTank extends Nemico{
     } 
     public void display(){
       rectMode(CENTER);
-      fill(0, 0, 255);
+      fill(135,77,191);
       rect(posizione.x,posizione.y,dimensione,dimensione);
       fill(255);
       rect(posizione.x,posizione.y,dimensione/2,dimensione/2);

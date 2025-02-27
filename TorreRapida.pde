@@ -10,7 +10,9 @@ public class TorreRapida extends Torre{
         attacco(nemici,raggio,danno,bersagli);
     }
     public void display(){
-      
+      rectMode(CENTER);
+      rect(this.posizione.x, this.posizione.y, dimensione,dimensione);
+      rectMode(CORNER);
     }
 
 }

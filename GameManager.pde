@@ -23,7 +23,7 @@ public class GameManager{
             torri.aggiornaTorri();
             textAlign(CENTER, CENTER);
             textSize(30);
-            text("vite: " +vitaCorrente.getVita(),700,20);
+            text("vite: " +vitaCorrente.getVita(),740,20);
         }else{
             endGame();
         }

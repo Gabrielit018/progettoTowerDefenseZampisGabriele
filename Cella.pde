@@ -19,13 +19,13 @@ public class Cella {
             c1.g = 127;
             c1.b = 255;
         } else if (!faParteDelPercorso && !torreAssegnata) {
-            c1.r = 182;
-            c1.g = 202;
-            c1.b = 112;
+            c1.r = 66;
+            c1.g = 49;
+            c1.b = 137;
         } else {
             c1.r = 0;
-            c1.g = 100;
-            c1.b = 67;
+            c1.g = 143;
+            c1.b = 57;
         }
     }
 
