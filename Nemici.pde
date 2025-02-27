@@ -3,11 +3,13 @@ public class Nemici{
     private ArrayList<PVector> percorso;
     private int tempoSpawnCorrente;
     private int intervalloSpawn;
-    public Nemici(ArrayList<PVector> percorso) {
+    GestioneVita vitaCorrente;
+    public Nemici(ArrayList<PVector> percorso,GestioneVita vitaCorrente) {
         this.nemici = new ArrayList<Nemico>();
         this.percorso = percorso;
         this.tempoSpawnCorrente=0;
         this.intervalloSpawn = 60; 
+        this.vitaCorrente=vitaCorrente;
     }
     private boolean timer(){
         tempoSpawnCorrente++;
@@ -31,7 +33,7 @@ public class Nemici{
                     n.aggiornamento();
                 }else{
                     nemici.remove(i);
-                    diminuisciVita();
+                    vitaCorrente.diminuisciVita();
                 }
             }
         }

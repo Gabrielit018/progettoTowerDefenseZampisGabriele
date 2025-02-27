@@ -3,31 +3,40 @@ public class GameManager{
     Griglia griglia;
     Torri torri;
     ArrayList<PVector> percorso;
-    public int vitaTorrePrincipale;
+    GestioneVita vitaCorrente;
     public GameManager () {
+        griglia = new Griglia(800);
         percorso = new ArrayList<PVector>();
         percorso.add(new PVector(50, 50));
         percorso.add(new PVector(400, 50));
         percorso.add(new PVector(400, 300));
         percorso.add(new PVector(750, 300));
-        nemici=new Nemici(percorso);
+        this.vitaCorrente=new GestioneVita();
+        nemici=new Nemici(percorso,vitaCorrente);
         torri=new Torri(griglia,nemici);
-        vitaTorrePrincipale=10;
+        
     }
     public void gioco(){
-        if(vitaTorrePrincipale>=0){
-            
+        if(vitaCorrente.getVita()>0){
+            textAlign(CENTER, CENTER);
+            textSize(30);
+            text(vitaCorrente.getVita(),700,20);
+            griglia.displayGriglia();
+            nemici.gestioneNemici(torri);
+            torri.aggiornaTorri();
+
         }else{
             endGame();
         }
     }
     private void endGame(){
         background(255,255,255, 1);
+        textSize(60);
         textAlign(CENTER, CENTER);
         text("GAME OVER",height/2,width/2);
     }
     public void diminuisciVita(){
-        vitaTorrePrincipale--;
+        vitaCorrente.diminuisciVita();
     }
     
 

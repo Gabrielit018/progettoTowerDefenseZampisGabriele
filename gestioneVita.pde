@@ -1,12 +1,12 @@
-public class gestioneVita{
+public class GestioneVita{
     private int vita;
-    public gestioneVita () {
+    public GestioneVita () {
         this.vita=10;
     }
     public void diminuisciVita(){
         this.vita--;
     }
-    public void getVita(){
+    public int getVita(){
         return this.vita;
     }
 
