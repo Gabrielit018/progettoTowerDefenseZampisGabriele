@@ -38,3 +38,4 @@ e utilizzate le seguenti classi:
 • classe nemici: compone tutto l'insieme di nemici e si occupa di generarne e rimuoverne 
 • classe delle torri e tutte le sottoclassi: oggetto per difendere la torre, vengono istanziate spendendo monete, possono essere istanziate in una cella non occupata e non facente parte del percorso
 • classe del gameManager: come verte nel nome, la classe gameManager si occupa di gestire tutte le impostazioni del gioco.
+![uml progetto](uml.jpg)
