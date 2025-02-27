@@ -6,8 +6,9 @@ public class NemicoVeloce extends Nemico{
         super(velocita,vita,percorso);
     } 
     public void display(){
+        fill(0, 0, 255);
         circle(posizione.x,posizione.y,dimensione);
-        fill(0);
+        fill(255);
         textSize(12);
         textAlign(CENTER, CENTER);
         text(this.vita, posizione.x, posizione.y);

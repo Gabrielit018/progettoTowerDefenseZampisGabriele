@@ -5,10 +5,11 @@ public class NemicoTank extends Nemico{
         super(velocita,vita,percorso);
     } 
     public void display(){
-        circle(posizione.x,posizione.y,dimensione);
-        fill(0);
-        textSize(12);
-        textAlign(CENTER, CENTER);
-        text(this.vita, posizione.x, posizione.y);
+      fill(0, 0, 255);
+      circle(posizione.x,posizione.y,dimensione);
+      fill(255);
+      textSize(12);
+      textAlign(CENTER, CENTER);
+      text(this.vita, posizione.x, posizione.y);
     }
 }

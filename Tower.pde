@@ -1,10 +1,9 @@
 public abstract class Tower{
     protected PVector posizione;
-    int raggio;
     int costo;
     int tempoRicarica;
     int tempoCorrente;
-    public Tower (int x, int y,int raggio) {
+    public Tower (int x, int y) {
         this.posizione=new PVector(x,y);
         setRicarica();
     }

@@ -9,7 +9,7 @@ public class NemicoNormale extends Nemico{
         rectMode(CENTER);
         fill(0, 0, 255);
         rect(posizione.x,posizione.y,dimensione,dimensione);
-        fill(0);
+        fill(255);
         textSize(12);
         textAlign(CENTER, CENTER);
         text(this.vita, posizione.x, posizione.y);

@@ -1,9 +1,9 @@
 public class TorreArea extends Tower{
     private static final int danno = 2;
     private static final int dimensione=30;
-    private static final int raggio=300;
+    private static final int raggio=200;
     public TorreArea (int x,int y) {
-        super(x,y,raggio);
+        super(x,y);
     }
     public void spara(ArrayList <Nemico> nemici){ 
         if(timer()){

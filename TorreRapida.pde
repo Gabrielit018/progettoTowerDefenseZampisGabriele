@@ -3,7 +3,7 @@ public class TorreRapida extends Tower{
     private static final int dimensione=30;
     private static final int raggio=30;
     public TorreRapida (int x,int y) {
-        super(x,y,raggio);
+        super(x,y);
     }
     public void spara(ArrayList <Nemico> nemici){
         
