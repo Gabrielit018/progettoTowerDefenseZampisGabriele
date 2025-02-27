@@ -6,6 +6,9 @@ public class NemicoTank extends Nemico{
     } 
     public void display(){
         circle(posizione.x,posizione.y,dimensione);
-        text(this.vita,posizione.x,posizione.y);
+        fill(0);
+        textSize(12);
+        textAlign(CENTER, CENTER);
+        text(this.vita, posizione.x, posizione.y);
     }
 }
