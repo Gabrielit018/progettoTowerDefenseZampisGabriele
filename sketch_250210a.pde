@@ -1,12 +1,6 @@
-Nemico n;
-Nemico n1;
-Nemico n3;
-Nemico n2;
-Nemico n4;
+Nemici n;
 Griglia g;
-Torre t;
 Torri tt;
-ArrayList<Nemico> nemici;
 ArrayList<PVector> percorso;
 int dimensione=800;
 public void setup(){
@@ -17,36 +11,15 @@ public void setup(){
     percorso.add(new PVector(400, 50));
     percorso.add(new PVector(400, 300));
     percorso.add(new PVector(750, 300));
-    n=new NemicoTank(6,percorso);
-    n1=new NemicoNormale(6,percorso);
-    n3=new NemicoVeloce(6,percorso);
-    n2=new NemicoVeloce(6,percorso);
-    n4=new NemicoVeloce(6,percorso);
-    t=new TorreRapida(300,400);
-    
-    nemici = new ArrayList<Nemico>();
-    nemici.add(n);
-    nemici.add(n1);
-    nemici.add(n3);
-    nemici.add(n2);
-    nemici.add(n4);
-    tt=new Torri(g,nemici);
+    n=new Nemici(percorso);
+    tt=new Torri(g,n);
   
 }
 public void draw(){
   //background(152,190,100);
-  g.displayGriglia();
-  for (int i = 0; i < nemici.size(); i++) {
-      Nemico n = nemici.get(i);
-      if (n.eMorto()) {
-          nemici.remove(i);
-          tt.aumentaMonete();
-      } else {
-          n.aggiornamento();
-      }
-  }
-  
-  tt.aggiornaTorri();
+    g.displayGriglia();
+    n.gestioneNemici(tt);
+    tt.aggiornaTorri();
   //t.display();
   //t.spara(nemici);
   

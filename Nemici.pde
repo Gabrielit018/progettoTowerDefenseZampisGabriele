@@ -7,31 +7,32 @@ public class Nemici{
         this.nemici = new ArrayList<Nemico>();
         this.percorso = percorso;
         this.tempoSpawnCorrente=0;
-        this.intervalloSpawn = 30; 
+        this.intervalloSpawn = 60; 
     }
     private boolean timer(){
         tempoSpawnCorrente++;
         if(tempoSpawnCorrente>intervalloSpawn){
-            return true;
             tempoSpawnCorrente=0;
+            return true;
+            
         }else{
             return false;
         }
         
     }
-    private void display() {
+    private void display(Torri t) {
         for (int i = 0; i < nemici.size(); i++) {
             Nemico n = nemici.get(i);
             if (n.eMorto()) {
                 nemici.remove(i);
-                tt.aumentaMonete();
+                t.aumentaMonete();
             } else {
                 n.aggiornamento();
             }
         }
     }
     private void spawnaNemici(){
-        if(timer){
+        if(timer()){
             spawnNemicoCasuale();
         }
     }
@@ -41,24 +42,24 @@ public class Nemici{
 
         switch (tipo) {
             case 0:
-                nuovoNemico = new NemicoNormale(percorso);
+                nuovoNemico = new NemicoNormale(8,percorso);
                 break;
             case 1:
-                nuovoNemico = new NemicoTank(percorso);
+                nuovoNemico = new NemicoTank(10,percorso);
                 break;
             case 2:
-                nuovoNemico = new NemicoVeloce(percorso);
+                nuovoNemico = new NemicoVeloce(6,percorso);
                 break;
             default:
-                nuovoNemico = new NemicoNormale(percorso);
+                nuovoNemico = new NemicoNormale(8,percorso);
                 break;
         }
         
 
         nemici.add(nuovoNemico);
     }
-    public void gestioneNemici(){
-        display();
+    public void gestioneNemici(Torri t){
+        display(t);
         spawnaNemici();
     }
     public ArrayList<Nemico> getNemici() {
