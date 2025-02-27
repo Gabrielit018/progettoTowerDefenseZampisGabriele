@@ -14,7 +14,7 @@ public class GameManager{
         this.vitaCorrente=new GestioneVita();
         nemici=new Nemici(percorso,vitaCorrente);
         torri=new Torri(griglia,nemici);
-        
+        stroke(119,221,119);
     }
     public void gioco(){
         if(vitaCorrente.getVita()>0){

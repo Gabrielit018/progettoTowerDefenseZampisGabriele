@@ -23,9 +23,9 @@ public class Cella {
             c1.g = 49;
             c1.b = 137;
         } else {
-            c1.r = 0;
-            c1.g = 143;
-            c1.b = 57;
+            c1.r = 45;
+            c1.g = 87;
+            c1.b = 44;
         }
     }
 

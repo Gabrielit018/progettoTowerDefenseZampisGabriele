@@ -10,7 +10,7 @@ public class TorreArea extends Torre{
         attacco(nemici,raggio,danno,bersagli);
     }
     public void display(){
-        fill(21,67,187);
+        fill(0,143,57);
         circle(this.posizione.x, this.posizione.y, dimensione);
     }
 
