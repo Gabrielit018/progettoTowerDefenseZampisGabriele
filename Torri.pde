@@ -51,7 +51,7 @@ public class Torri {
     }
     private void displayMonete(){
         textSize(30);
-        text(this.monete, 10, 10);
+        text("coin: " + this.monete, 60, 20);
     }
     public void aumentaMonete(){
         this.monete=this.monete+20;

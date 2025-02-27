@@ -34,6 +34,7 @@ public void draw(){
       Nemico n = nemici.get(i);
       if (n.eMorto()) {
           nemici.remove(i);
+          tt.aumentaMonete();
       } else {
           n.aggiornamento();
       }
