@@ -7,58 +7,47 @@ public class Torri {
     private ArrayList<Nemico> nemici;
     private static final int costoTorreArea = 50;
     private static final int costoTorreRapida=70;
-    private int centroX;
-    private int centroY;
 
     public Torri(Griglia griglia,ArrayList<Nemico> nemici) {
         this.griglia = griglia;
         torri = new ArrayList<Torre>();
         this.nemici=nemici;
-        monete = 70;
+        monete = 50;
     }
 
-    private void piazzaTorre() {
+    public void piazzaTorre() {
         x = mouseX;
         y = mouseY;
+
+        // Trova la cella corrispondente alle coordinate del mouse
         int cellaX = x / griglia.grandezzaCella;
         int cellaY = y / griglia.grandezzaCella;
 
         if (cellaX >= 0 && cellaX < Griglia.lato && cellaY >= 0 && cellaY < Griglia.lato) {
             Cella cella = griglia.griglia[cellaY][cellaX];
             if (!cella.getTorreAssegnata() && !cella.getFaParteDelPercorso()) {
-                if (key == '1' && monete >= costoTorreArea) {
+                if (key == '1' && monete >= 50) {
                     
-                    centroX = cella.ritornaCoordinate().x1 + griglia.grandezzaCella / 2;
-                    centroY = cella.ritornaCoordinate().y1 + griglia.grandezzaCella / 2;
+                    int centroX = cella.ritornaCoordinate().x1 + griglia.grandezzaCella / 2;
+                    int centroY = cella.ritornaCoordinate().y1 + griglia.grandezzaCella / 2;
                     torri.add(new TorreArea(centroX, centroY));
-                    monete = monete - costoTorreArea;
+                    monete = monete - 50;
                     cella.setTorreAssegnata(true);
-                } else if (key == '2' && monete >= costoTorreRapida) {
-                    centroX = cella.ritornaCoordinate().x1 + griglia.grandezzaCella / 2;
-                    centroY = cella.ritornaCoordinate().y1 + griglia.grandezzaCella / 2;
+                } else if (key == '2' && monete >= c) {
+                    // Aggiungi una torreRapida al centro della cella
+                    int centroX = cella.ritornaCoordinate().x1 + griglia.grandezzaCella / 2;
+                    int centroY = cella.ritornaCoordinate().y1 + griglia.grandezzaCella / 2;
                     torri.add(new TorreRapida(centroX, centroY));
-                    monete = monete - costoTorreRapida;
-                    cella.setTorreAssegnata(true);
+                    monete = monete - costoTorreRapida; // Sottrai il costo della torre
+                    cella.setTorreAssegnata(true); // Imposta la cella come assegnata
                 }
             }
         }
     }
-    private void displayTorri(){
+    public void displayTorre(){
         for(Torre torreTemp : torri){
             torreTemp.display();
             torreTemp.spara(nemici);
         }
-    }
-    private void displayMonete(){
-        textSize(30);
-        text(this.monete, 10, 10);
-    }
-    public void aumentaMonete(){
-        this.monete=this.monete+20;
-    }
-    public void aggiornaTorri(){
-        piazzaTorre();
-        displayTorri();
-        displayMonete();
     }
 }

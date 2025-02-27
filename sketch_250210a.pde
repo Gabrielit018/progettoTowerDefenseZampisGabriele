@@ -3,6 +3,7 @@ Nemico n1;
 Nemico n3;
 Griglia g;
 Torre t;
+Torri tt;
 ArrayList<Nemico> nemici;
 ArrayList<PVector> percorso;
 int dimensione=800;
@@ -17,11 +18,13 @@ public void setup(){
     n=new NemicoTank(6,percorso);
     n1=new NemicoNormale(6,percorso);
     n3=new NemicoVeloce(6,percorso);
-    t=new TorreArea(300,400);
+    t=new TorreRapida(300,400);
+    
     nemici = new ArrayList<Nemico>();
     nemici.add(n);
     nemici.add(n1);
     nemici.add(n3);
+    tt=new Torri(g,nemici);
   
 }
 public void draw(){
@@ -36,8 +39,8 @@ public void draw(){
       }
   }
   
-  
-  t.display();
-  t.spara(nemici);
+  tt.aggiornaTorri();
+  //t.display();
+  //t.spara(nemici);
   
 }

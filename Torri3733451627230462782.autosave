@@ -17,9 +17,11 @@ public class Torri {
         monete = 70;
     }
 
-    private void piazzaTorre() {
+    public void piazzaTorre() {
         x = mouseX;
         y = mouseY;
+
+        // Trova la cella corrispondente alle coordinate del mouse
         int cellaX = x / griglia.grandezzaCella;
         int cellaY = y / griglia.grandezzaCella;
 
@@ -43,22 +45,11 @@ public class Torri {
             }
         }
     }
-    private void displayTorri(){
+    public void displayTorre(){
         for(Torre torreTemp : torri){
             torreTemp.display();
             torreTemp.spara(nemici);
         }
     }
-    private void displayMonete(){
-        textSize(30);
-        text(this.monete, 10, 10);
-    }
-    public void aumentaMonete(){
-        this.monete=this.monete+20;
-    }
-    public void aggiornaTorri(){
-        piazzaTorre();
-        displayTorri();
-        displayMonete();
-    }
+    
 }
