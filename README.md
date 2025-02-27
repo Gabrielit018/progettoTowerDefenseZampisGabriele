@@ -21,9 +21,10 @@ col passare del tempo inoltre vengono generati sempre più nemici, per raggiunge
 • il giocatore deve trovarsi nella situazione di affrontare una situazione random di nemici estratti casualmente e progressivamente potenziati nel lungo andare della partita
 ## requisiti non funzionali
 • Il sistema deve essere di facile utilizzo.
-• Il sistema deve riuscire a girare anche su dispositivi poco performanti.
-• Il sistema deve riuscire ad essere veloce nella visualizzazione grafica sullo schermo per non mostrare i frame in maniera lenta e in modo che non ci siano lag.
-• Il sistema non deve avere un peso eccessivo.
+• Il sistema deve riuscire a girare anche su ogni tipo di dispotivo .
+• Il sistema deve riuscire ad essere veloce e performante nella grafica affinche si possa usufruire di un esperienza corretta di gioco.
+• Il sistema non deve essere troppo pesante in termini di memoria, e utilizzo delle risorse in generale della macchina.
 • Il sistema deve avere un tempo di risposta veloce.
+• il sistema dev'essere facilmente mantenibile e aggiornabile
 
 
