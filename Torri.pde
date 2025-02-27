@@ -4,16 +4,16 @@ public class Torri {
     public int monete;
     private int x;
     private int y;
-    private Nemici n;
+    private Nemici nemici;
     private static final int costoTorreArea = 50;
     private static final int costoTorreRapida=70;
     private int centroX;
     private int centroY;
 
-    public Torri(Griglia griglia,Nemici n) {
+    public Torri(Griglia griglia,Nemici nemici) {
         this.griglia = griglia;
         torri = new ArrayList<Torre>();
-        this.n=n;
+        this.nemici=nemici;
         monete = 70;
     }
 
@@ -46,7 +46,7 @@ public class Torri {
     private void displayTorri(){
         for(Torre torreTemp : torri){
             torreTemp.display();
-            torreTemp.spara(n.getNemici());
+            torreTemp.spara(nemici.getNemici());
         }
     }
     private void displayMonete(){

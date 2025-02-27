@@ -58,8 +58,8 @@ public class Nemici{
 
         nemici.add(nuovoNemico);
     }
-    public void gestioneNemici(Torri t){
-        display(t);
+    public void gestioneNemici(Torri torri){
+        display(torri);
         spawnaNemici();
     }
     public ArrayList<Nemico> getNemici() {
