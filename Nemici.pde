@@ -31,6 +31,7 @@ public class Nemici{
                     n.aggiornamento();
                 }else{
                     nemici.remove(i);
+                    diminuisciVita();
                 }
             }
         }
