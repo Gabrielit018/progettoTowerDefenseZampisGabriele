@@ -1,6 +1,8 @@
 Nemico n;
 Nemico n1;
 Nemico n3;
+Nemico n2;
+Nemico n4;
 Griglia g;
 Torre t;
 Torri tt;
@@ -18,12 +20,16 @@ public void setup(){
     n=new NemicoTank(6,percorso);
     n1=new NemicoNormale(6,percorso);
     n3=new NemicoVeloce(6,percorso);
+    n2=new NemicoVeloce(6,percorso);
+    n4=new NemicoVeloce(6,percorso);
     t=new TorreRapida(300,400);
     
     nemici = new ArrayList<Nemico>();
     nemici.add(n);
     nemici.add(n1);
     nemici.add(n3);
+    nemici.add(n2);
+    nemici.add(n4);
     tt=new Torri(g,nemici);
   
 }

@@ -3,9 +3,11 @@ public abstract class Torre{
     int costo;
     int tempoRicarica;
     int tempoCorrente;
+    int bersagliColpiti;
     public Torre (int x, int y) {
         this.posizione=new PVector(x,y);
         setRicarica();
+        bersagliColpiti=0;
     }
     public abstract void display();
     public abstract void spara(ArrayList<Nemico> nemici);
@@ -30,14 +32,20 @@ public abstract class Torre{
       nemicoTemp.diminuisciVita(danno);
         
     }
-    protected void attacco(ArrayList <Nemico> nemici,int raggio,int danno){
+    protected void attacco(ArrayList <Nemico> nemici,int raggio,int danno,int bersagli){
         if(timer()){
             for(Nemico nemicoTemp : nemici){ 
                 float distanza=PVector.dist(this.posizione,nemicoTemp.posizione);
+                
                 if(distanza<=raggio){
-                    colpisci(this.posizione.x, this.posizione.y, nemicoTemp.posizione.x, nemicoTemp.posizione.y,nemicoTemp,danno);
+                    if(bersagliColpiti<bersagli){
+                        colpisci(this.posizione.x, this.posizione.y, nemicoTemp.posizione.x, nemicoTemp.posizione.y,nemicoTemp,danno);
+                        bersagliColpiti++;
+                    }
+                    
                 }
             }
         }
+        bersagliColpiti=0;
     }
 }
